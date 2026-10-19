@@ -1,0 +1,28 @@
+# NexusForum - Apache 配置
+# =========================================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 已存在的文件/目录直接访问
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # 其余请求交给 index.php（查询参数路由）
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# ---- 安全响应头 ----
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ---- 禁止目录浏览 ----
+Options -Indexes
+
+# ---- 默认文档 ----
+DirectoryIndex index.php index.html

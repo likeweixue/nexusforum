@@ -1,0 +1,489 @@
+/* =========================================================
+   NexusForum - 样式表
+   风格：NexusPHP 经典 PT 论坛（表格布局、紧凑、蓝色主调）
+   ========================================================= */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background: #e8e8e8;
+    line-height: 1.6;
+}
+
+a { color: #1a5fb4; text-decoration: none; }
+a:hover { color: #d9534f; text-decoration: underline; }
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,.12);
+    min-height: 100vh;
+}
+
+.muted { color: #999; }
+.small { font-size: 12px; }
+.required { color: #d9534f; }
+
+/* ---------------- 顶部 ---------------- */
+.header {
+    background: linear-gradient(180deg, #3a6ea5 0%, #2c5282 100%);
+    color: #fff;
+    padding: 14px 20px;
+}
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.logo a {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.logo a:hover { color: #ffd700; text-decoration: none; }
+.logo-sub {
+    font-size: 12px;
+    color: #b8d4f0;
+    margin-left: 8px;
+}
+.userpanel { font-size: 13px; }
+.userpanel a { color: #dce9f7; margin-left: 12px; }
+.userpanel a:hover { color: #ffd700; }
+.userpanel .user-class { margin-right: 8px; }
+
+/* ---------------- 导航 ---------------- */
+.navbar {
+    background: #f5f5f5;
+    border-bottom: 2px solid #3a6ea5;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.navbar a {
+    padding: 10px 16px;
+    color: #333;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+.navbar a:hover { background: #e3ecf5; text-decoration: none; }
+.navbar a.active {
+    color: #2c5282;
+    border-bottom-color: #2c5282;
+    background: #fff;
+}
+.navbar-stats {
+    margin-left: auto;
+    color: #888;
+    font-size: 12px;
+    padding-right: 4px;
+}
+
+/* ---------------- 主体 ---------------- */
+.main { padding: 16px 20px 40px; }
+
+/* ---------------- 面包屑 ---------------- */
+.breadcrumb {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ---------------- 工具栏 ---------------- */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.toolbar h2 { font-size: 18px; color: #2c5282; }
+.toolbar-right { display: flex; gap: 8px; align-items: center; }
+
+/* ---------------- 按钮 ---------------- */
+.btn {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #333;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn:hover { background: #e3ecf5; border-color: #3a6ea5; text-decoration: none; }
+.btn-primary {
+    background: #3a6ea5;
+    border-color: #2c5282;
+    color: #fff;
+}
+.btn-primary:hover { background: #2c5282; color: #fff; }
+.btn-danger { background: #d9534f; border-color: #c9302c; color: #fff; }
+.btn-danger:hover { background: #c9302c; color: #fff; }
+.btn-small { padding: 2px 10px; font-size: 12px; }
+
+/* ---------------- 表格（论坛/主题/数据） ---------------- */
+.forum-table, .topic-table, .data-table, .profile-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    background: #fff;
+}
+.forum-table th, .topic-table th, .data-table th {
+    background: #eef3f9;
+    border: 1px solid #d5dde8;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 13px;
+    color: #2c5282;
+    white-space: nowrap;
+}
+.forum-table td, .topic-table td, .data-table td {
+    border: 1px solid #e3e3e3;
+    padding: 8px 10px;
+    vertical-align: middle;
+}
+.forum-table tbody tr:hover, .topic-table tbody tr:hover, .data-table tbody tr:hover {
+    background: #f7fafd;
+}
+.topic-table tr.sticky { background: #fffbe6; }
+.topic-table tr.sticky:hover { background: #fff3c4; }
+
+.col-forum { width: 45%; }
+.col-count { width: 70px; text-align: center; }
+.col-last { width: 200px; }
+.col-state { width: 50px; text-align: center; }
+.col-subject { }
+.col-author { width: 120px; }
+
+.forum-name { font-weight: bold; font-size: 15px; }
+.forum-desc { color: #888; font-size: 12px; margin-top: 2px; }
+.last-meta { color: #999; font-size: 12px; }
+.empty { text-align: center; color: #999; padding: 30px !important; }
+
+.topic-icon { font-size: 16px; }
+.topic-subject { font-weight: 500; }
+.badge {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.badge-sticky { background: #f0ad4e; color: #fff; }
+.badge-locked { background: #999; color: #fff; }
+.badge-ok { background: #5cb85c; color: #fff; }
+.badge-muted { background: #ccc; color: #666; }
+
+/* ---------------- 分类 ---------------- */
+.category { margin-bottom: 20px; }
+.category-header {
+    background: #dce9f7;
+    border: 1px solid #c3d5e8;
+    border-bottom: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    color: #2c5282;
+}
+.category-desc { font-weight: normal; font-size: 12px; color: #6b8cb0; margin-left: 10px; }
+
+/* ---------------- 帖子 ---------------- */
+.post {
+    display: flex;
+    border: 1px solid #d5dde8;
+    margin-bottom: 10px;
+    background: #fff;
+}
+.post-user {
+    width: 160px;
+    flex-shrink: 0;
+    background: #f5f8fc;
+    border-right: 1px solid #e3e3e3;
+    padding: 12px;
+    text-align: center;
+}
+.post-username { font-weight: bold; margin-bottom: 4px; }
+.post-username a { color: #2c5282; }
+.post-class { font-size: 12px; margin-bottom: 8px; }
+.post-signature {
+    font-size: 11px;
+    color: #999;
+    border-top: 1px dashed #ddd;
+    padding-top: 6px;
+    margin-top: 6px;
+    word-break: break-all;
+}
+.post-body { flex: 1; padding: 12px 16px; min-width: 0; }
+.post-meta {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.floor { font-weight: bold; color: #3a6ea5; margin-right: 10px; }
+.post-content { word-break: break-word; overflow-wrap: break-word; }
+.post-content p { margin: 0; }
+
+/* 用户等级颜色（NexusPHP 传统配色） */
+.user-class, .post-class { font-weight: bold; }
+.class-0 { color: #999; }
+.class-1 { color: #333; }
+.class-2 { color: #5cb85c; }
+.class-3 { color: #3a6ea5; }
+.class-4 { color: #8e44ad; }
+.class-5 { color: #d9534f; }
+.class-10 { color: #f0ad4e; }
+.class-100 { color: #d9534f; }
+.class-200 { color: #d9534f; }
+
+/* ---------------- 表单 ---------------- */
+.auth-box, .form-box, .profile-box, .reply-box, .invite-generate, .admin-section {
+    max-width: 640px;
+    margin: 0 auto 20px;
+    border: 1px solid #d5dde8;
+    background: #fff;
+    padding: 24px;
+}
+.auth-box h2, .form-box h2, .profile-box h2, .reply-box h3, .invite-generate h3, .admin-section h2 {
+    color: #2c5282;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eef3f9;
+}
+.form-row { margin-bottom: 14px; }
+.form-row label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+.form-row input[type="text"],
+.form-row input[type="password"],
+.form-row input[type="email"],
+.form-row input[type="number"],
+.form-row select,
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: inherit;
+}
+.form-row input:focus, .form-row select:focus, textarea:focus {
+    outline: none;
+    border-color: #3a6ea5;
+    box-shadow: 0 0 0 2px rgba(58,110,165,.15);
+}
+textarea { resize: vertical; }
+.form-actions { margin-top: 16px; display: flex; gap: 10px; }
+.inline-form { display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.inline-form input[type="text"],
+.inline-form input[type="number"],
+.inline-form select { width: auto; padding: 5px 8px; }
+.auth-alt { margin-top: 14px; text-align: center; font-size: 13px; color: #888; }
+
+.bbcode-bar {
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-bottom: none;
+    padding: 4px 10px;
+}
+.bbcode-bar + textarea { border-radius: 0; }
+
+/* ---------------- 提示 ---------------- */
+.flash {
+    padding: 10px 16px;
+    margin-bottom: 12px;
+    border-radius: 3px;
+    border: 1px solid;
+}
+.flash-success { background: #dff0d8; border-color: #d6e9c6; color: #3c763d; }
+.flash-error { background: #f2dede; border-color: #ebccd1; color: #a94442; }
+.flash-info { background: #d9edf7; border-color: #bce8f1; color: #31708f; }
+.notice {
+    background: #fcf8e3;
+    border: 1px solid #faebcc;
+    color: #8a6d3b;
+    padding: 10px 16px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+}
+.error-box {
+    max-width: 500px;
+    margin: 60px auto;
+    text-align: center;
+    border: 1px solid #ebccd1;
+    background: #f2dede;
+    padding: 30px;
+    border-radius: 4px;
+}
+.error-box h2 { color: #a94442; margin-bottom: 10px; }
+
+/* ---------------- 分页 ---------------- */
+.pagination {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin: 16px 0;
+    flex-wrap: wrap;
+}
+.pagination a, .pagination .current, .pagination .ellipsis {
+    padding: 4px 12px;
+    border: 1px solid #d5dde8;
+    background: #fff;
+    font-size: 13px;
+}
+.pagination a:hover { background: #e3ecf5; text-decoration: none; }
+.pagination .current {
+    background: #3a6ea5;
+    border-color: #2c5282;
+    color: #fff;
+    font-weight: bold;
+}
+.pagination .ellipsis { border: none; background: none; color: #999; }
+
+/* ---------------- BBCode ---------------- */
+.bbcode-quote {
+    border-left: 4px solid #3a6ea5;
+    background: #f5f8fc;
+    margin: 8px 0;
+    padding: 8px 14px;
+    color: #555;
+}
+.bbcode-quote-author { font-weight: bold; color: #2c5282; font-size: 13px; margin-bottom: 4px; }
+.bbcode-code {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 12px 14px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: 13px;
+    margin: 8px 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+.bbcode-img { max-width: 100%; height: auto; margin: 4px 0; }
+.bbcode-list { margin: 6px 0 6px 24px; }
+
+/* ---------------- 统计 ---------------- */
+.side-box {
+    border: 1px solid #d5dde8;
+    background: #f9fbfd;
+    padding: 14px 18px;
+    margin-top: 16px;
+}
+.side-box h3 { color: #2c5282; font-size: 15px; margin-bottom: 8px; }
+.stat-list { list-style: none; }
+.stat-list li { padding: 3px 0; font-size: 13px; color: #666; }
+
+/* ---------------- 页脚 ---------------- */
+.footer {
+    border-top: 2px solid #3a6ea5;
+    background: #f5f5f5;
+    text-align: center;
+    padding: 16px;
+    font-size: 12px;
+    color: #888;
+}
+.footer p { margin: 3px 0; }
+.footer a { color: #3a6ea5; }
+
+/* ---------------- 管理面板 ---------------- */
+.admin-tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 2px solid #3a6ea5;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+.admin-tabs a {
+    padding: 8px 18px;
+    background: #f0f0f0;
+    border: 1px solid #d5dde8;
+    border-bottom: none;
+    color: #555;
+    font-size: 13px;
+}
+.admin-tabs a:hover { background: #e3ecf5; text-decoration: none; }
+.admin-tabs a.active {
+    background: #3a6ea5;
+    color: #fff;
+    border-color: #2c5282;
+    font-weight: bold;
+}
+.admin-section { max-width: none; }
+.admin-form {
+    background: #f9fbfd;
+    border: 1px solid #e3e3e3;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+}
+.admin-form h3 { font-size: 14px; color: #2c5282; margin-bottom: 10px; }
+
+.invite-code {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 2px 8px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #c9302c;
+    font-weight: bold;
+}
+
+/* ---------------- 资料页 ---------------- */
+.profile-box { max-width: 640px; }
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eef3f9;
+}
+.profile-table { margin-bottom: 20px; }
+.profile-table th {
+    background: #f5f8fc;
+    border: 1px solid #e3e3e3;
+    padding: 7px 12px;
+    text-align: left;
+    width: 120px;
+    color: #2c5282;
+    font-size: 13px;
+}
+.profile-table td { border: 1px solid #e3e3e3; padding: 7px 12px; }
+.profile-edit h3 { color: #2c5282; font-size: 15px; margin-bottom: 12px; }
+
+/* ---------------- 响应式 ---------------- */
+@media (max-width: 760px) {
+    .post { flex-direction: column; }
+    .post-user {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e3e3e3;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-align: left;
+        padding: 8px 12px;
+    }
+    .post-signature { display: none; }
+    .col-last, .col-author { display: none; }
+    .navbar-stats { display: none; }
+    .main { padding: 12px; }
+}

@@ -1,0 +1,19 @@
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 运行时数据（安装后生成，不纳入版本控制）
+data/users/
+data/forums/
+data/overforums/
+data/topics/
+data/posts/
+data/invites/
+data/counters.json
+data/error.log
+
+# 安装生成的配置
+conf/config.php
+
+# 日志
+*.log
